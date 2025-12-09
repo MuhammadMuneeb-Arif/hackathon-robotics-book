@@ -1,0 +1,105 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #1a73e8; /* Google blue for tech/robotics feel */
+  --ifm-color-primary-dark: #1557b0;
+  --ifm-color-primary-darker: #134da3;
+  --ifm-color-primary-darkest: #0f3d85;
+  --ifm-color-primary-light: #3b8cff;
+  --ifm-color-primary-lighter: #5b9fff;
+  --ifm-color-primary-lightest: #7fbfff;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4285f4; /* Lighter blue for dark mode */
+  --ifm-color-primary-dark: #2c6ad0;
+  --ifm-color-primary-darker: #275db5;
+  --ifm-color-primary-darkest: #204a94;
+  --ifm-color-primary-light: #5a95f5;
+  --ifm-color-primary-lighter: #72a5f7;
+  --ifm-color-primary-lightest: #8bb5f8;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom styles for robotics textbook */
+.robotics-code-block {
+  background-color: #f8f9fa;
+  border-left: 4px solid var(--ifm-color-primary);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.robotics-diagram {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.robotics-lesson-objectives {
+  background-color: #e8f0fe;
+  border: 1px solid #d2e3fc;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.robotics-exercise {
+  background-color: #f0f4f8;
+  border: 1px solid #dae0e6;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.robotics-takeaway {
+  background-color: #e6f4ea;
+  border-left: 4px solid #34a853;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.robotics-reflection {
+  background-color: #fef7e6;
+  border-left: 4px solid #f9ab00;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+/* Improve readability for code examples */
+code {
+  font-family: 'Monaco', 'Consolas', 'Ubuntu Mono', monospace;
+}
+
+/* Better spacing for lesson content */
+.lesson-content {
+  line-height: 1.7;
+}
+
+.lesson-content h3,
+.lesson-content h4,
+.lesson-content h5,
+.lesson-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lesson-content p {
+  margin-bottom: 1rem;
+}
+
+.lesson-content ul,
+.lesson-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}

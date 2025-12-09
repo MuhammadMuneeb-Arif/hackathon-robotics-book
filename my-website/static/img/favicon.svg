@@ -1,0 +1,29 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .robot-body { fill: #007acc; }
+    .circuit { fill: #e0f0ff; stroke: #e0f0ff; stroke-width: 0.5; }
+    .eye { fill: #e0f0ff; }
+    .antenna-line { stroke: #007acc; stroke-width: 1.5; }
+    .antenna-dot { fill: #007acc; }
+  </style>
+
+  {/* Robot head with circuit pattern */}
+  <g transform="translate(5, 5)">
+    {/* Robot head outline */}
+    <rect x="0" y="0" width="30" height="30" rx="4" class="robot-body" />
+
+    {/* Circuit lines on robot head */}
+    <rect x="4" y="4" width="7" height="7" class="circuit"/>
+    <rect x="19" y="4" width="7" height="7" class="circuit"/>
+    <rect x="4" y="19" width="7" height="7" class="circuit"/>
+    <rect x="19" y="19" width="7" height="7" class="circuit"/>
+
+    {/* Eyes */}
+    <circle cx="9" cy="14" r="2" class="eye" />
+    <circle cx="21" cy="14" r="2" class="eye" />
+
+    {/* Antenna */}
+    <line x1="15" y1="0" x2="15" y2="-5" class="antenna-line" />
+    <circle cx="15" cy="-6" r="1.5" class="antenna-dot" />
+  </g>
+</svg>

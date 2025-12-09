@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g fill="#bd10e0">
+    <!-- AI Brain -->
+    <circle cx="100" cy="70" r="20" fill="#bd10e0"/>
+    <!-- Neural network connections -->
+    <circle cx="70" cy="50" r="8" fill="#bd10e0"/>
+    <circle cx="130" cy="50" r="8" fill="#bd10e0"/>
+    <circle cx="80" cy="90" r="8" fill="#bd10e0"/>
+    <circle cx="120" cy="90" r="8" fill="#bd10e0"/>
+    <circle cx="100" cy="110" r="8" fill="#bd10e0"/>
+
+    <!-- Connecting lines -->
+    <line x1="100" y1="70" x2="70" y2="50" stroke="#bd10e0" stroke-width="2"/>
+    <line x1="100" y1="70" x2="130" y2="50" stroke="#bd10e0" stroke-width="2"/>
+    <line x1="100" y1="70" x2="80" y2="90" stroke="#bd10e0" stroke-width="2"/>
+    <line x1="100" y1="70" x2="120" y2="90" stroke="#bd10e0" stroke-width="2"/>
+    <line x1="100" y1="70" x2="100" y2="110" stroke="#bd10e0" stroke-width="2"/>
+
+    <!-- Human figure -->
+    <circle cx="100" cy="150" r="10" fill="#bd10e0"/>
+    <rect x="90" y="160" width="20" height="25" fill="#bd10e0"/>
+  </g>
+</svg>
