@@ -117,7 +117,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/your-organization/hackathon-robotics-book',
+              href: 'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book',
             },
           ],
         },
