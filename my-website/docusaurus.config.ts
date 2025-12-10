@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://Tehrim01fatima.github.io',
+  url: 'https://MuhammadMuneeb-Arif.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/hackathon-robotics-book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Tehrim01fatima', // Usually your GitHub org/user name.
+  organizationName: 'MuhammadMuneeb-Arif', // Usually your GitHub org/user name.
   projectName: 'hackathon-robotics-book', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -43,7 +43,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/Tehrim01fatima/hackathon-robotics-book/edit/main/my-website/',
+            'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book/edit/main/my-website/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -72,7 +72,7 @@ const config: Config = {
       label: 'Textbook',
     },
     {
-      href: 'https://github.com/Tehrim01fatima/hackathon-robotics-book',
+      href: 'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book',
       label: 'GitHub',
       position: 'right',
     },
@@ -119,18 +119,10 @@ const config: Config = {
               label: 'GitHub',
               href: 'https://github.com/your-organization/hackathon-robotics-book',
             },
-            {
-              label: 'ROS 2 Documentation',
-              href: 'https://docs.ros.org/',
-            },
-            {
-              label: 'NVIDIA Isaac',
-              href: 'https://developer.nvidia.com/isaac',
-            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built By Muneeb Ahmed.`,
     },
     prism: {
       theme: prismThemes.github,
