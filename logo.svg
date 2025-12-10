@@ -1,0 +1,24 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .robot-head { fill: #007acc; }
+    .eye { fill: #ffffff; }
+    .highlight { fill: #e0f0ff; }
+  </style>
+
+  {/* Simplified robot head */}
+  <g transform="translate(5, 5)">
+    {/* Robot head outline */}
+    <rect x="0" y="0" width="30" height="30" rx="6" class="robot-head" />
+
+    {/* Eyes */}
+    <circle cx="9" cy="13" r="3" class="eye" />
+    <circle cx="21" cy="13" r="3" class="eye" />
+
+    {/* Mouth/speaker with educational element */}
+    <rect x="10" y="22" width="10" height="2" rx="1" class="highlight" />
+
+    {/* Antenna */}
+    <line x1="15" y1="0" x2="15" y2="-5" stroke="#007acc" stroke-width="2" />
+    <circle cx="15" cy="-6" r="1.5" fill="#007acc" />
+  </g>
+</svg>
