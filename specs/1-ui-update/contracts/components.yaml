@@ -1,0 +1,277 @@
+# Component Interface Contracts: UI Update for Docusaurus Robotics Book
+
+## Overview
+This document defines the interface contracts for UI components affected by the UI update. Since this is a frontend styling update without new APIs, these contracts define the component prop interfaces, CSS class contracts, and behavioral expectations.
+
+## Component Contracts
+
+### 1. ThemeToggle Component
+
+#### Purpose
+Provides user control over light/dark mode preference with persistent storage.
+
+#### Interface Contract
+```typescript
+interface ThemeToggleProps {
+  // Optional: Initial theme selection
+  initialTheme?: 'light' | 'dark' | 'system';
+  // Optional: Custom CSS class
+  className?: string;
+  // Optional: ARIA label for accessibility
+  ariaLabel?: string;
+}
+
+interface ThemeToggleReturns {
+  // Current theme state
+  currentTheme: 'light' | 'dark';
+  // Function to toggle between themes
+  toggleTheme: () => void;
+  // Function to set specific theme
+  setTheme: (theme: 'light' | 'dark') => void;
+}
+```
+
+#### CSS Contract
+- Expects `.theme-toggle-container` wrapper class
+- Applies `theme-toggle--active` when expanded
+- Responds to `data-theme="light|dark"` attribute
+- Compatible with Docusaurus's existing theme system
+
+#### Behavioral Contract
+- Persists user preference in localStorage
+- Respects `prefers-color-scheme` media query if system mode selected
+- Provides smooth transition between themes
+- Maintains focus after interaction
+
+### 2. AnimatedHero Component
+
+#### Purpose
+Enhanced homepage header with gradient animations and fade-in effects.
+
+#### Interface Contract
+```typescript
+interface AnimatedHeroProps {
+  title: string;
+  subtitle: string;
+  buttons?: Array<{
+    text: string;
+    href: string;
+    variant?: 'primary' | 'secondary';
+    icon?: React.ReactNode;
+  }>;
+  className?: string;
+  animationDelay?: number; // milliseconds
+}
+
+interface AnimatedHeroReturns {
+  // Animation state management
+  animationState: 'idle' | 'animating' | 'complete';
+  // Function to restart animation
+  restartAnimation: () => void;
+}
+```
+
+#### CSS Contract
+- Requires `.hero--animated` base class
+- Applies `.hero__title--fade-in` to title element
+- Applies `.hero__subtitle--fade-in` to subtitle element
+- Uses `--hero-gradient-animation` CSS variable for gradient
+- Compatible with Docusaurus's existing hero classes
+
+#### Behavioral Contract
+- Initiates fade-in animation on mount
+- Runs gradient animation continuously
+- Maintains accessibility with `prefers-reduced-motion` support
+- Preserves SEO-friendly content structure
+
+### 3. StyledButton Component
+
+#### Purpose
+Consistent button styling with hover animations across the site.
+
+#### Interface Contract
+```typescript
+interface StyledButtonProps {
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary' | 'outline' | 'icon';
+  size?: 'small' | 'medium' | 'large';
+  animationType?: 'lift' | 'pulse' | 'none';
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  onClick?: () => void;
+  href?: string;
+  className?: string;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+interface StyledButtonReturns {
+  // Current interaction state
+  state: 'idle' | 'hover' | 'active' | 'disabled';
+  // Function to trigger animation programmatically
+  triggerAnimation: () => void;
+}
+```
+
+#### CSS Contract
+- Applies `.button--enhanced` base class
+- Uses modifier classes: `.button--primary`, `.button--secondary`, etc.
+- Applies `.button--lift-animation` for lift effect
+- Compatible with Docusaurus's button classes
+- Responsive sizing with `.button--small`, `.button--large`
+
+#### Behavioral Contract
+- Provides consistent hover/focus/active states
+- Implements lift animation on hover (when enabled)
+- Maintains keyboard accessibility
+- Respects user's reduced motion preference
+
+### 4. ContentBlock Component
+
+#### Purpose
+Styling for specialized content blocks with hover animations.
+
+#### Interface Contract
+```typescript
+interface ContentBlockProps {
+  type: 'code-block' | 'diagram' | 'lesson-objectives' | 'exercise' | 'takeaway' | 'reflection';
+  children: React.ReactNode;
+  title?: string;
+  collapsible?: boolean;
+  initiallyCollapsed?: boolean;
+  animationOnView?: boolean;
+  className?: string;
+}
+
+interface ContentBlockReturns {
+  // Expansion state for collapsible blocks
+  isExpanded: boolean;
+  // Function to toggle expansion
+  toggleExpanded: () => void;
+  // Animation completion status
+  animationComplete: boolean;
+}
+```
+
+#### CSS Contract
+- Uses semantic class names: `.robotics-code-block`, `.robotics-exercise`, etc.
+- Applies `.content-block--hover-effect` for hover animations
+- Responsive layout with `.content-block--mobile-adaptive`
+- Theme-aware with inherited color variables
+
+#### Behavioral Contract
+- Provides distinct visual treatment per content type
+- Implements hover animations that enhance rather than distract
+- Maintains content accessibility and readability
+- Supports collapsible functionality when enabled
+
+### 5. ResponsiveNavbar Component
+
+#### Purpose
+Enhanced navigation bar with improved hover effects and responsive behavior.
+
+#### Interface Contract
+```typescript
+interface ResponsiveNavbarProps {
+  logo?: {
+    src: string;
+    alt: string;
+    href?: string;
+  };
+  items: Array<{
+    label: string;
+    href: string;
+    target?: '_self' | '_blank';
+  }>;
+  themeToggle?: boolean;
+  className?: string;
+}
+
+interface ResponsiveNavbarReturns {
+  // Mobile menu state
+  isMenuOpen: boolean;
+  // Function to toggle mobile menu
+  toggleMenu: () => void;
+  // Current viewport classification
+  viewport: 'mobile' | 'tablet' | 'desktop';
+}
+```
+
+#### CSS Contract
+- Extends Docusaurus's `.navbar` class
+- Adds `.navbar--enhanced-hover` for hover effects
+- Implements `.navbar--shadow` for depth perception
+- Responsive breakpoints: `.navbar--mobile`, `.navbar--tablet`
+
+#### Behavioral Contract
+- Provides clear hover feedback for navigation items
+- Casts subtle shadow for depth perception
+- Responsive behavior adapts to viewport changes
+- Maintains keyboard navigation functionality
+
+## CSS Variable Contracts
+
+### Color Variables
+```css
+/* Primary branding */
+--ifm-color-primary: #25c2a0; /* Default Docusaurus primary */
+
+/* Themed text colors */
+--ifm-content-color: var(--ifm-color-content);
+--ifm-color-content: #292929; /* Light theme */
+--ifm-color-content-inverse: #e6e6e6; /* Dark theme */
+
+/* Backgrounds */
+--ifm-background-color: #ffffff; /* Light theme */
+--ifm-background-color-inverse: #121212; /* Dark theme */
+
+/* Theme-independent variables */
+--ifm-transition-speed: 250ms;
+--ifm-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+```
+
+### Animation Variables
+```css
+/* Timing */
+--ifm-animation-duration-fast: 150ms;
+--ifm-animation-duration-normal: 250ms;
+--ifm-animation-duration-slow: 350ms;
+
+/* Easing */
+--ifm-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+/* Animation triggers */
+--ifm-reduced-motion: no-preference; /* Set based on user preference */
+```
+
+## Accessibility Contracts
+
+### ARIA Attributes
+- All interactive elements must have appropriate `role` attributes
+- State changes must be communicated via `aria-expanded`, `aria-pressed`, etc.
+- Focus management follows logical tab order
+- Screen reader announcements for dynamic content changes
+
+### Keyboard Navigation
+- All interactive elements reachable via Tab key
+- Visual focus indicators visible for all states
+- Space/Enter keys activate buttons and controls
+- Escape key closes dropdowns and modals
+
+### Reduced Motion
+- Respects `prefers-reduced-motion` media query
+- Provides alternative experiences when animations disabled
+- Maintains functionality without animations
+
+## Error Handling Contracts
+
+### Client-side Error Handling
+- Invalid prop values gracefully handled with defaults
+- Network requests have appropriate fallbacks
+- Animation failures don't break core functionality
+- Theme loading errors revert to default theme
+
+### Fallback Strategies
+- CSS variables have appropriate fallback values
+- JavaScript enhancements progressively enhanced
+- Older browsers receive gracefully degraded experience
+- Animation performance issues trigger fallback behaviors

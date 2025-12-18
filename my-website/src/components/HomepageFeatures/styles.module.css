@@ -1,11 +1,110 @@
+/* --- Main Section Wrapper --- */
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  justify-content: center;
+  padding: 4rem 0;
   width: 100%;
+  background: linear-gradient(180deg,
+    var(--ifm-color-primary-lightest) 0%,
+    var(--ifm-color-primary-lighter) 100%);
 }
 
+/* --- SVG Icons --- */
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 180px;
+  width: 180px;
+  margin-bottom: 1rem;
+  transition: transform 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.06));
+}
+
+.featureSvg:hover {
+  transform: translateY(-8px) scale(1.05);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.1));
+}
+
+/* --- Each Feature Card --- */
+.col--4 {
+  background: var(--ifm-background-surface-color);
+  padding: 2rem 1.5rem;
+  margin: 1rem 0.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px var(--ifm-global-shadow-lw);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+}
+
+.col--4:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 32px var(--ifm-global-shadow-md);
+  border-color: var(--ifm-color-primary);
+}
+
+/* --- Typography --- */
+.col--4 h3 {
+  font-size: 1.35rem;
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  margin: 1rem 0 0.5rem;
+}
+
+.col--4 p {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.6;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Dark mode specific styles */
+[data-theme='dark'] .features {
+  background: linear-gradient(180deg,
+    var(--ifm-color-primary-darker) 0%,
+    var(--ifm-color-primary-darkest) 100%);
+}
+
+[data-theme='dark'] .col--4 {
+  background: var(--ifm-card-background-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .col--4 h3 {
+  color: var(--ifm-color-primary-lighter);
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 996px) {
+  .featureSvg {
+    height: 150px;
+    width: 150px;
+  }
+  .features {
+    padding: 3rem 1rem;
+  }
+  .col--4 {
+    max-width: 95%;
+    margin: 1rem auto;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 576px) {
+  .featureSvg {
+    height: 120px;
+    width: 120px;
+  }
+  .col--4 h3 {
+    font-size: 1.25rem;
+  }
+  .col--4 p {
+    font-size: 0.88rem;
+  }
+  .features {
+    padding: 2rem 1rem;
+  }
 }

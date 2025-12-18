@@ -13,22 +13,28 @@ function HomepageHeader() {
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
-        <Heading as="h1" className="hero__title">
+        <Heading as="h1" className={clsx("hero__title", "fade-in-up", styles.heroTitle)}>
           {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <p className={clsx("hero__subtitle", "fade-in-up", styles.heroSubtitle)}>
+          {siteConfig.tagline}
+        </p>
+        <div className={clsx(styles.buttons, "fade-in-up")}>
           <Link
-            className="button button--secondary button--lg"
+            className="button button--secondary button--lg lift-animation"
             to="/docs/intro"
           >
             Start Learning
           </Link>
+          <Link
+            className="button button--outline button--lg lift-animation"
+            to="/docs/module-1"
+          >
+            Explore Modules
+          </Link>
         </div>
       </div>
     </header>
-    
-    
   );
 }
 

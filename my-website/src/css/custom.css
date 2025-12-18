@@ -4,76 +4,191 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* CSS custom properties for theme management and animations */
 :root {
-  --ifm-color-primary: #1a73e8; /* Google blue for tech/robotics feel */
-  --ifm-color-primary-dark: #1557b0;
-  --ifm-color-primary-darker: #134da3;
-  --ifm-color-primary-darkest: #0f3d85;
-  --ifm-color-primary-light: #3b8cff;
-  --ifm-color-primary-lighter: #5b9fff;
-  --ifm-color-primary-lightest: #7fbfff;
+  /* Primary branding colors */
+  --ifm-color-primary: #2e7d32; /* Rich green for tech/robotics feel */
+  --ifm-color-primary-dark: #1b5e20;
+  --ifm-color-primary-darker: #144d14;
+  --ifm-color-primary-darkest: #0d3c0d;
+  --ifm-color-primary-light: #4caf50;
+  --ifm-color-primary-lighter: #66bb6a;
+  --ifm-color-primary-lightest: #81c784;
+
+  /* Content colors for light theme */
+  --ifm-color-content: #292929;
+  --ifm-color-content-inverse: #e6e6e6;
+  --ifm-background-color: #ffffff;
+  --ifm-background-color-inverse: #121212;
+  --ifm-navbar-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+  /* Animation timing and easing */
+  --ifm-animation-duration-fast: 150ms;
+  --ifm-animation-duration-normal: 250ms;
+  --ifm-animation-duration-slow: 350ms;
+  --ifm-animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Code font size */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #4285f4; /* Lighter blue for dark mode */
-  --ifm-color-primary-dark: #2c6ad0;
-  --ifm-color-primary-darker: #275db5;
-  --ifm-color-primary-darkest: #204a94;
-  --ifm-color-primary-light: #5a95f5;
-  --ifm-color-primary-lighter: #72a5f7;
-  --ifm-color-primary-lightest: #8bb5f8;
+  --ifm-color-primary: #4caf50; /* Lighter green for dark mode */
+  --ifm-color-primary-dark: #388e3c;
+  --ifm-color-primary-darker: #2e7d32;
+  --ifm-color-primary-darkest: #1b5e20;
+  --ifm-color-primary-light: #66bb6a;
+  --ifm-color-primary-lighter: #81c784;
+  --ifm-color-primary-lightest: #a5d6a7;
+
+  /* Content colors for dark theme */
+  --ifm-color-content: #e6e6e6;
+  --ifm-color-content-inverse: #292929;
+  --ifm-background-color: #121212;
+  --ifm-background-color-inverse: #ffffff;
+  --ifm-navbar-shadow: 0 2px 8px rgba(0,0,0,0.3);
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /* Custom styles for robotics textbook */
 .robotics-code-block {
-  background-color: #f8f9fa;
+  background-color: var(--ifm-background-color);
   border-left: 4px solid var(--ifm-color-primary);
   padding: 1rem;
   margin: 1rem 0;
+  border-radius: 4px;
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
 }
 
 .robotics-diagram {
   text-align: center;
   margin: 2rem 0;
   padding: 1rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: var(--ifm-background-color);
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
 }
 
 .robotics-lesson-objectives {
-  background-color: #e8f0fe;
-  border: 1px solid #d2e3fc;
+  background-color: rgba(46, 125, 50, 0.1); /* var(--ifm-color-primary) at 10% opacity */
+  border: 1px solid rgba(46, 125, 50, 0.3); /* var(--ifm-color-primary) at 30% opacity */
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
 }
 
 .robotics-exercise {
-  background-color: #f0f4f8;
-  border: 1px solid #dae0e6;
+  background-color: rgba(46, 125, 50, 0.08); /* var(--ifm-color-primary) at 8% opacity */
+  border: 1px solid rgba(46, 125, 50, 0.25); /* var(--ifm-color-primary) at 25% opacity */
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
 }
 
 .robotics-takeaway {
-  background-color: #e6f4ea;
+  background-color: rgba(52, 168, 83, 0.15); /* #34a853 at 15% opacity */
   border-left: 4px solid #34a853;
   padding: 1rem;
   margin: 1rem 0;
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
 }
 
 .robotics-reflection {
-  background-color: #fef7e6;
+  background-color: rgba(249, 171, 0, 0.15); /* #f9ab00 at 15% opacity */
   border-left: 4px solid #f9ab00;
   padding: 1rem;
   margin: 1rem 0;
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+/* Add hover animations to content blocks */
+.robotics-code-block:hover,
+.robotics-diagram:hover,
+.robotics-lesson-objectives:hover,
+.robotics-exercise:hover,
+.robotics-takeaway:hover,
+.robotics-reflection:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Base animation system */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lift-animation {
+  transition: transform var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+.lift-animation:hover {
+  transform: translateY(-3px);
+  transition: transform var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+/* Gradient animation for hero section */
+.hero-gradient {
+  background: linear-gradient(120deg,
+    var(--ifm-color-primary-light),
+    var(--ifm-color-primary),
+    var(--ifm-color-primary-dark));
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animation for prefers-reduced-motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-up,
+  .lift-animation,
+  .robotics-code-block,
+  .robotics-diagram,
+  .robotics-lesson-objectives,
+  .robotics-exercise,
+  .robotics-takeaway,
+  .robotics-reflection,
+  .hero-gradient {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    animation: none;
+    transform: none !important;
+  }
 }
 
 /* Improve readability for code examples */
@@ -84,6 +199,7 @@ code {
 /* Better spacing for lesson content */
 .lesson-content {
   line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 .lesson-content h3,
@@ -102,4 +218,179 @@ code {
 .lesson-content ol {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
+}
+
+/* Add visual icons to list items for enhanced scannability (T033) */
+.lesson-content li::marker {
+  color: var(--ifm-color-primary);
+}
+
+.lesson-content ul {
+  list-style-type: disc;
+}
+
+.lesson-content ol {
+  list-style-type: decimal;
+}
+
+/* Optimize typography with appropriate font sizing and line height (T034) */
+.markdown h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.markdown p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* Implement monospaced fonts for code blocks with proper highlighting (T036-T037) */
+code {
+  background-color: rgba(82, 82, 82, 0.3); /* var(--ifm-color-emphasis-200) at 30% opacity */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+
+/* Apply proper padding to code blocks for improved readability (T036-T037) */
+pre {
+  padding: 1.2rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Implement alternating section backgrounds for visual rhythm (T038) */
+.main-wrapper:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.05); /* 5% black overlay */
+}
+
+/* Navigation bar improvements */
+.navbar {
+  box-shadow: var(--ifm-navbar-shadow);
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+.navbar__item,
+.navbar__link {
+  transition: all var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+.navbar__item:hover,
+.navbar__link:hover {
+  opacity: 0.85;
+}
+
+.navbar__toggle {
+  transition: transform var(--ifm-animation-duration-normal) var(--ifm-animation-easing);
+}
+
+.navbar__toggle:hover {
+  transform: rotate(15deg);
+}
+
+/* Responsive spacing for different screen sizes (T039) */
+@media (max-width: 996px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+
+  .markdown h1 {
+    font-size: 2rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.75rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.375rem;
+  }
+
+  .lesson-content {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
+
+  .markdown h1 {
+    font-size: 1.75rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.25rem;
+  }
+
+  .lesson-content {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .markdown h1 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.25rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.1rem;
+  }
+
+  .lesson-content {
+    font-size: 0.9rem;
+  }
 }

@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics Textbook',
   tagline: 'An advanced textbook on ROS 2, Gazebo, NVIDIA Isaac, and Vision-Language-Action systems',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/Robotics-logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -43,7 +43,11 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Remove this to remove the "edit this page" links.
           editUrl:
+<<<<<<< HEAD
             'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book/edit/main/my-website/',
+=======
+            'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book/edit/main/',
+>>>>>>> 1-ui-update
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -58,19 +62,27 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
-   navbar: {
-  title: 'Physical AI & Humanoid Robotics',
-  logo: {
-    alt: 'Robotics Textbook Logo',
-    src: 'img/logo.svg',
-  },
-  items: [
-    {
-      type: 'docSidebar',
-      sidebarId: 'textbookSidebar', // <-- FIXED
-      position: 'left',
-      label: 'Textbook',
+    navbar: {
+      title: 'Physical AI & Humanoid Robotics',
+      logo: {
+        alt: 'Robotics Textbook Logo',
+        src: 'img/Robotics-logo.png',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'textbookSidebar', // <-- FIXED
+          position: 'left',
+          label: 'Textbook',
+        },
+        {
+          href: 'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
     },
+<<<<<<< HEAD
     {
       href: 'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book',
       label: 'GitHub',
@@ -78,6 +90,8 @@ const config: Config = {
     },
   ],
 },
+=======
+>>>>>>> 1-ui-update
 
     footer: {
       style: 'dark',
@@ -118,11 +132,19 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/MuhammadMuneeb-Arif/hackathon-robotics-book',
+<<<<<<< HEAD
             },
           ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built By Muneeb Ahmed.`,
+=======
+            }
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics Textbook. Built by Muhammad Muneeb Ahmed.`,
+>>>>>>> 1-ui-update
     },
     prism: {
       theme: prismThemes.github,

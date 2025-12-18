@@ -11,38 +11,38 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'The Robotic Nervous System (ROS 2)',
+    title: 'ROS 2: The Robot Operating System',
     Svg: require('@site/static/img/module1.svg').default,
     description: (
       <>
-        Learn the foundations of robot communication using ROS 2. Understand nodes, topics, services, and real-time robot control.
+        Master the backbone of modern robotics with ROS 2. Learn about nodes, topics, services, and actions for seamless robot communication and real-time control systems.
       </>
     ),
   },
   {
-    title: 'Simulation Environments (Gazebo & Isaac Sim)',
+    title: 'Digital Twins: Gazebo & Isaac Sim',
     Svg: require('@site/static/img/module2.svg').default,
     description: (
       <>
-        Build and test full robot simulations with physics, sensors, and environment interaction using Gazebo and NVIDIA Isaac.
+        Create realistic robot simulations with physics engines, sensor models, and complex environments. Test your robots virtually before deploying in the real world.
       </>
     ),
   },
   {
-    title: 'Humanoid Control & Locomotion',
+    title: 'Humanoid Motion & Control',
     Svg: require('@site/static/img/module3.svg').default,
     description: (
       <>
-        Explore balance, walking, motion planning, inverse kinematics, and dynamic controllers for humanoid robots.
+        Engineer dynamic balance, walking gaits, and locomotion patterns. Master inverse kinematics and motion planning for sophisticated humanoid robot movement.
       </>
     ),
   },
   {
-    title: 'Physical AI & Human–Robot Interaction',
+    title: 'AI Perception & Interaction',
     Svg: require('@site/static/img/module4.svg').default,
     description: (
       <>
-        Discover how robots perceive, reason, and respond in the physical world using AI, vision systems, and natural interaction models.
+        Integrate computer vision, sensor fusion, and machine learning for robots that perceive, understand, and interact intelligently with their environment.
       </>
     ),
   },
